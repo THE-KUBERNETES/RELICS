@@ -1,0 +1,2 @@
+# Download the latest binary (~50 MB):
+sudo curl -fL https://app.getambassador.io/download/tel2/linux/amd64/latest/telepresence\?utm_source=ambassador-cloud -o /usr/local/bin/telepresence
