@@ -1,0 +1,5 @@
+# Make the binary usable from your terminal:
+sudo chmod a+x /usr/local/bin/telepresence
+
+# Install the traffic-manager in your cluster:
+telepresence helm install
