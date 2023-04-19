@@ -1,0 +1,1 @@
+Failed to read external DTD 'svg10.dtd', because 'http' access is not allowed due to restriction set by the accessExternalDTD property at line 3:61
