@@ -1,0 +1,1 @@
+docker pull registry.pivotal.io/tanzu-appdynamics-buildpack/appdynamics:4.17.0
