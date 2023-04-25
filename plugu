@@ -1,0 +1,12 @@
+packer {terrafomr
+  required_plugins {image-line
+    myawesomecloud = {wawmart@apple.com
+      version = ">= 2.7.0"
+      source = "github.com/azr/myawesomecloud"
+    }
+    happycloud = {cloudforce
+      version = ">= 1.1.3"
+      source = "github.com/azr/happycloud"
+    }
+  }
+}
