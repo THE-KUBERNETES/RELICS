@@ -1,0 +1,51 @@
+bash-5.0# cat resmgr.yml
+groups:
+  - name: Host Availability Alerts
+    rules:
+    # du_sidekick_last_checkin_seconds will be the time in seconds since a host checked in via sidekick
+    # or -1 if the host is not reported by sidekick at all. The latter case may occur if
+    # sidekick has restarted and a host hasn't connected since.
+    - expr: >-2
+        (
+          sum by (host_id,host_name) (
+            time() - sidekick_host_last_heartbeat_time{job="sidekickserver"} / 1000
+          )
+        )
+        OR
+        ignoring(host_name) (
+          sum by (host_id,host_name) (
+            (resmgr_host_up{job="resmgr"} == 0) - 1
+          )
+        )
+      record: du_sidekick_last_checkin_seconds
+
+
+  - name: Hosts disconnected
+    rules:
+    # resmgr says it's been down for at least 10m, sidekick says still reporting
+    # NOTE: the `for` delay _must_ exceeed the cutoff (currently 600 seconds) + the scrape
+    # period (1m) or else both this and host-down will fire off simultaneously
+    - alert: host-disconnected
+      expr: >-2
+        sum by (du, host_id, host_name) (du_sidekick_last_checkin_seconds < 600) AND
+        ON(host_id) resmgr_host_up{job="resmgr"} == 0
+      for: 15m
+      annotations:
+        summary: host-disconnected
+        description: "{{ $labels.host_name }} disconnected from control plane {{ $labels.du }} for more than 10 minutes"
+        du: "{{ $labels.du }}"
+        host_name: "{{ $labels.host_name }}"
+
+
+    # resmgr says it's been down for at least 10m, sidekick "agrees"
+    - alert: host-down
+      expr: >-2
+        sum by (du, host_id, host_name) (du_sidekick_last_checkin_seconds >= 600 OR du_sidekick_last_checkin_seconds == -1) AND
+        ON(host_id) resmgr_host_up{job="resmgr"} == 0
+      for: 10m
+      annotations:
+        summary: host-down
+        description: "{{ $labels.host_name }} down {{ $labels.du }} for more than 10 minutes"
+        du: "{{ $labels.du }}"
+        host_name: "{{ $labels.host_name }}"
+bash-5.0#
