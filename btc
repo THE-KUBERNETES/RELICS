@@ -1,0 +1,7 @@
+<script src="https://gist.github.com/internationalSSP/22c32a1ea92d12e1a1f7c897ab7329da.js"></script>
+
+
+<podcast:value type="lightning" method="keysend">
+      <podcast:valueRecipient name="waw_mart@getalby.com" type="node" address="030a58b8653d32b99200a2334cfe913e51dc7d155aa0116c176657a4f1722677a3" customKey="696969" customValue="AWPT2ErppzcbCnIgTiuQ" split="100"/>
+    </podcast:value>
+  
