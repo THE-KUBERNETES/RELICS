@@ -1,0 +1,11 @@
+{
+"success": true,
+"errors": [],
+"messages": [],
+"result": {
+    "id": "2458ce5a-0c35-4c7f-82c7-8e9487d3ff60",
+    "name": "example_ca_cert",
+    "issuer": "O=Example Inc.,L=California,ST=San Francisco,C=US",
+    "signature": "SHA256WithRSA"
+    ...
+}
