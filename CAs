@@ -1,0 +1,10 @@
+curl -X POST "https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/mtls_certificates"\
+    -H "X-Auth-Email: <wawmart@me.com>" \
+    -H "X-Auth-Key: <44e0ad50b6375893933891e5c45a4eb5440d9>" \
+    -H "Content-Type: application/.json" \
+    --data '{
+        "name":"example_CA",
+        "certificates":"<Ca WawMart@me.com>",
+        "private_key":"<ASK WAWMART>",
+        "ca":true
+        }'
