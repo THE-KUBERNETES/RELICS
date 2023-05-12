@@ -1,0 +1,226 @@
+
+SupportcPanel & WHM DocumentationDeveloper ForumsDiscord
+Search the docs
+cPanel UAPI
+Guide to cPanel UAPI
+cPanel UAPI
+API Development Tools
+API Token Management
+Batch
+SSE Task Management
+URL Parsing
+Authentication
+External Authentication
+Two-Factor Settings
+Block Ip Addresses
+Block IP
+Add IP address to cPanel account's block list
+Remove IP address from cPanel account's block list
+Commerce Integration
+Market Integration
+SSL Certificates
+Contact Information
+Contact Information
+cPanel Account
+Account Enhancements
+Account Information
+Contact Information
+cPanel Features
+Disk Quotas
+Personalization
+Resource Usage and Statistics
+Subaccount Management
+Team Roles
+Team Users
+cPanel Account Backups
+Backup
+File Restoration
+cPanel Theme Management
+Application Information
+Brand Management
+Browser Cache Management
+Language
+Theme Settings
+Directory Management
+Directory Indexes
+Directory Privacy
+Directory Protection
+DNS
+DNS
+DNS Information
+DNS Security
+Dynamic DNS
+Email DNS Settings
+Domain Management
+Direct Link Protection (Hotlink)
+Domain Information
+Domain Redirection
+SubDomain
+Virtual Host Information
+Email
+Email Accounts
+Email Filtering
+Email Forwarding
+Email Server Information
+Email Suspensions
+Mail Server Information
+Mailbox Management
+Mailing Lists
+Signing and Encryption (GnuPG Keys)
+Spam Filtering (Greylisting)
+Spam Management
+Spam Prevention (BoxTrapper)
+Webmail Applications
+Webmail Sessions
+Files
+FTP Accounts
+FTP Server Settings
+Image Tools
+Manage Files
+WebDisk Settings
+GIT Management
+Deployment Settings
+Repository Management
+MySQL and MariaDB
+Database Information
+Database Management
+Remote Databases
+User Management
+Notifications
+Pushbullet
+Optional Applications
+Antivirus Protection (ClamAV)
+Calendar and Contacts (DAV)
+Calendar and Contacts Server
+cPanel Addons (cPAddons)
+WordPress Manager Backups
+WordPress Manager Settings
+PostgreSQL
+PostgreSQL Database Management
+PostgreSQL User Management
+Retrieve bandwidth information
+Bandwidth
+Security
+Known SSH Hosts Management
+Login Information
+Server Information
+cPanel Server Information
+Notifications
+Password Strength
+SSH
+ServiceProxy
+ServiceProxy
+SSL Certificates
+Auto-generated SSL Certificates
+cPanel Account SSL Management
+SNI Email Settings
+SSL Certificate Management
+Verify Domain Ownership
+Statistics
+Domain Statistics
+Weblog Settings
+Web Server Configuration
+EA4
+PHP
+Web Server Management
+Application Manager
+ModSecurity
+NginxCaching
+PHP Settings
+Website Configuration
+Handler Management
+Logs
+Mime Type Management
+Site Information
+Site Installation
+Site Publisher Management
+WHM API1
+Add IP address to cPanel account's block list
+This function blocks IP addresses from accessing the domains on a cPanel account.
+
+Important
+
+When you disable the Web Server role, the system disables this function.
+
+Security
+BasicAuth
+Request
+Responses
+200HTTP Request was successful.
+RESPONSE SCHEMA: application/json
+apiversion	
+integer
+The version of the API.
+
+func	
+string
+The name of the method called.
+
+module	
+string
+The name of the module called.
+
+result	
+object
+Request
+Response
+✕
+Target server:
+
+A server running cPanel. - https://wawmart.org:3306/execute
+A server running cPanel. - https://wawmart.org:3306/execute
+host:
+wawmart.org
+The hostname of a server running cPanel
+
+port:
+3306
+The cPanel port.
+
+Security
+Parameters
+# query parameters
+ 
+ip:
+(string)
+GET
+/BlockIP/add_ip
+Send
+Request samples
+CLI
+URL
+LiveAPI Perl
+LiveAPI PHP
+Copy
+uapi --output=jsonpretty \
+  --user=username \
+  BlockIP \
+  add_ip \
+  ip='192.168.0.1/16'
+Response samples
+200
+application/json
+CopyExpand allCollapse all
+{
+"apiversion": 3,
+"func": "add_ip",
+"module": "BlockIP",
+"result": {
+"data": [
+"1.1.1.1"
+],
+"errors": null,
+"messages": null,
+"metadata": {
+"transformed": 1
+},
+"status": 1,
+"warnings": null
+}
+}
+Next to Remove IP address from cPanel account's block list
+©2023 cPanel, L.L.C. All rights reserved.
+Cookie Options
+Privacy Policy
+Trademarks
+Navigated to Add IP address to cPanel account's block list
