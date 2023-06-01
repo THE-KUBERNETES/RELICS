@@ -1,0 +1,1 @@
+git remote add balena g_karam_jameel_moore@git.balena-cloud.com:g_karam_jameel_moore/okcurrency.git && git push balena master
