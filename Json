@@ -1,0 +1,21 @@
+[
+  {
+    "id": "1337",
+    "chainName": "localhost",
+    "rpcUrls": [
+      "http://127.0.0.1:8545"
+    ],
+    "chainId": "1337",
+    "nativeCurrency": {
+      "decimals": 18,
+      "name": "Custom network",
+      "symbol": "TEST"
+    },
+    "blockExplorerUrls": [
+      ""
+    ],
+    "iconUrls": [
+      ""
+    ]
+  }
+]
