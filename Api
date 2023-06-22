@@ -1,0 +1,10 @@
+var client = new RestClient("https://api.commerce.coinbase.com/charges");
+client.Timeout = -1;
+var request = new RestRequest(Method.POST);
+request.AddHeader("Content-Type", "application/json");
+request.AddHeader("Accept", "application/json");
+request.AddHeader("X-CC-Api-Key", "633b4b11f7cddbf0a2963988c71c30a2db6838c1");
+var body = @"{""name"":""WaaS"",""description"":""Wallet As A Service"",""pricing_type"":""""}";
+request.AddParameter("application/json", body,  ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
